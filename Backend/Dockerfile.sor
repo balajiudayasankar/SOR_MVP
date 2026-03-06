@@ -1,0 +1,29 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
+WORKDIR /src
+
+# Copy SOR project files
+COPY Relevantz.EEPZ.SorApi/Relevantz.SOR.Common/Relevantz.SOR.Common.csproj Relevantz.EEPZ.SorApi/Relevantz.SOR.Common/
+COPY Relevantz.EEPZ.SorApi/Relevantz.SOR.Core/Relevantz.SOR.Core.csproj Relevantz.EEPZ.SorApi/Relevantz.SOR.Core/
+COPY Relevantz.EEPZ.SorApi/Relevantz.SOR.Data/Relevantz.SOR.Data.csproj Relevantz.EEPZ.SorApi/Relevantz.SOR.Data/
+COPY Relevantz.EEPZ.SorApi/Relevantz.SOR.Api/Relevantz.SOR.Api.csproj Relevantz.EEPZ.SorApi/Relevantz.SOR.Api/
+
+# Copy EEPZ shared dependencies referenced by SOR.Data
+COPY Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Data/Relevantz.EEPZ.Data.csproj Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Data/
+COPY Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Common/Relevantz.EEPZ.Common.csproj Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Common/
+
+# Restore
+RUN dotnet restore Relevantz.EEPZ.SorApi/Relevantz.SOR.Api/Relevantz.SOR.Api.csproj
+
+# Copy full source of all required projects
+COPY Relevantz.EEPZ.SorApi/ Relevantz.EEPZ.SorApi/
+COPY Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Data/ Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Data/
+COPY Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Common/ Relevantz.EEPZ.AuthApi/Relevantz.EEPZ.Common/
+
+WORKDIR /src/Relevantz.EEPZ.SorApi/Relevantz.SOR.Api
+RUN dotnet publish -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+EXPOSE 5082
+ENTRYPOINT ["dotnet", "Relevantz.SOR.Api.dll"]

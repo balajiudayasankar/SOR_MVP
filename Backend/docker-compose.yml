@@ -1,0 +1,113 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: eepz-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eepzdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping --silent --protocol=TCP -h mysql -uroot -proot"]
+      interval: 10s
+      timeout: 20s
+      retries: 10
+      start_period: 30s
+    networks:
+      - eepz-network
+
+
+  mongodb:
+    image: mongo:7
+    container_name: eepz-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - eepz-network
+
+
+  auth-api:
+    build: ./Relevantz.EEPZ.AuthApi
+    container_name: eepz-auth-api
+    restart: always
+    ports:
+      - "5101:5101"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mysql;Database=eepzdb;User=root;Password=root;
+      - ASPNETCORE_URLS=http://+:5101
+      - MongoDbSettings__ConnectionString=mongodb://mongodb:27017
+      - MongoDbSettings__DatabaseName=EEPZFileStorage
+      - MongoDbSettings__ProfileImagesCollectionName=ProfileImages
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/Logs
+    networks:
+      - eepz-network
+
+
+  proj-management-api:
+    build: ./Relevantz.EEPZ.ProjMgmtApi
+    container_name: eepz-proj-management-api
+    restart: always
+    ports:
+      - "5109:5109"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mysql;Database=eepzdb;User=root;Password=root;
+      - ASPNETCORE_URLS=http://+:5109
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/Logs
+    networks:
+      - eepz-network
+
+
+  sor-api:
+    build:
+      context: .                      # ← Root folder so EEPZ.AuthApi shared projects are accessible
+      dockerfile: Dockerfile.sor      # ← Dedicated Dockerfile at root level
+    container_name: eepz-sor-api
+    restart: always
+    ports:
+      - "5082:5082"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mysql;Database=eepzdb;User=root;Password=root;
+      - ASPNETCORE_URLS=http://+:5082
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/Logs
+    networks:
+      - eepz-network
+
+
+volumes:
+  mysql_data:
+  mongodb_data:
+
+
+networks:
+  eepz-network:
+    driver: bridge

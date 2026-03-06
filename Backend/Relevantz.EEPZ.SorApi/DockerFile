@@ -1,23 +1,20 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 WORKDIR /src
-COPY ["Relevantz.SOR.Api/Relevantz.SOR.Api.csproj", "Relevantz.SOR.Api/"]
-COPY ["Relevantz.SOR.Core/Relevantz.SOR.Core.csproj", "Relevantz.SOR.Core/"]
-COPY ["Relevantz.SOR.Data/Relevantz.SOR.Data.csproj", "Relevantz.SOR.Data/"]
-COPY ["Relevantz.SOR.Common/Relevantz.SOR.Common.csproj", "Relevantz.SOR.Common/"]
-RUN dotnet restore "Relevantz.SOR.Api/Relevantz.SOR.Api.csproj"
+
+COPY Relevantz.SOR.Common/Relevantz.SOR.Common.csproj Relevantz.SOR.Common/
+COPY Relevantz.SOR.Core/Relevantz.SOR.Core.csproj Relevantz.SOR.Core/
+COPY Relevantz.SOR.Data/Relevantz.SOR.Data.csproj Relevantz.SOR.Data/
+COPY Relevantz.SOR.Api/Relevantz.SOR.Api.csproj Relevantz.SOR.Api/
+
+RUN dotnet restore Relevantz.SOR.Api/Relevantz.SOR.Api.csproj
+
 COPY . .
-WORKDIR "/src/Relevantz.SOR.Api"
-RUN dotnet build "Relevantz.SOR.Api.csproj" -c Release -o /app/build
 
-FROM build AS publish
-RUN dotnet publish "Relevantz.SOR.Api.csproj" -c Release -o /app/publish
+WORKDIR /src/Relevantz.SOR.Api
+RUN dotnet publish -c Release -o /app/publish
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+EXPOSE 5116
 ENTRYPOINT ["dotnet", "Relevantz.SOR.Api.dll"]
