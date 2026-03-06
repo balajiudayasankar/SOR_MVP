@@ -1,0 +1,500 @@
+/* ============================================================
+   Offer Preview — Scoped Styles  (Prefix: op-)
+   Theme: #27235c navy | gradient #97247e → #e01950
+============================================================ */
+
+/* ── Page Shell ─────────────────────────────────────────────── */
+.op-page {
+  padding: 16px 20px 56px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* ── Loading ────────────────────────────────────────────────── */
+.op-loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.op-loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #27235c;
+  border-radius: 50%;
+  animation: op-spin 0.75s linear infinite;
+}
+
+@keyframes op-spin { to { transform: rotate(360deg); } }
+
+.op-loading-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* ── Header Card ────────────────────────────────────────────── */
+.op-header-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0.875rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #27235c;
+}
+
+.op-header-card__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.op-header-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Vertical divider between back button and title */
+.op-header-v-divider {
+  width: 1px;
+  height: 32px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.op-header-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.op-page-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.op-header-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.op-offer-number-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #27235c;
+  background: rgba(39, 35, 92, 0.07);
+  border: 1px solid rgba(39, 35, 92, 0.2);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-family: monospace;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* ── Back Button (clean arrow-box style like OfferDetail) ───── */
+.op-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 6px 8px;
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.op-btn-back i {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.op-btn-back span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.op-btn-back:hover {
+  background: #27235c;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.22);
+}
+
+.op-btn-back:active {
+  background: #1f1c4b;
+}
+
+/* ── Action Buttons ─────────────────────────────────────────── */
+.op-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  border: none;
+}
+
+.op-btn-action i { font-size: 14px; }
+
+/* Outline variant — Edit Details */
+.op-btn-action--outline {
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  color: #27235c;
+}
+
+.op-btn-action--outline:hover {
+  background: rgba(39, 35, 92, 0.06);
+  box-shadow: 0 2px 8px rgba(39, 35, 92, 0.14);
+}
+
+/* Primary gradient variant — Download PDF */
+.op-btn-action--primary {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+}
+
+.op-btn-action--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(151, 36, 126, 0.38);
+}
+
+/* ── Meta Strip ─────────────────────────────────────────────── */
+.op-meta-strip {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 0.875rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.op-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 20px 4px 0;
+  flex: 1;
+  min-width: 140px;
+}
+
+.op-meta-item__icon {
+  font-size: 15px;
+  color: #27235c;
+  opacity: 0.65;
+  flex-shrink: 0;
+}
+
+.op-meta-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.op-meta-item__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.op-meta-item__value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.op-meta-item__value--mono {
+  font-family: monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.2px;
+}
+
+.op-meta-sep {
+  width: 1px;
+  height: 32px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+  margin: 0 16px 0 0;
+}
+
+/* ── Status Badge ───────────────────────────────────────────── */
+.op-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.op-status-badge--sm {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+}
+
+.op-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.op-badge--draft     { background: #f3f4f6; color: #6b7280; border: 1px solid #d1d5db; }
+.op-badge--draft     .op-status-dot { background: #6b7280; }
+
+.op-badge--pending   { background: rgba(245, 158, 11, 0.1); color: #b45309; border: 1px solid rgba(245, 158, 11, 0.3); }
+.op-badge--pending   .op-status-dot { background: #f59e0b; }
+
+.op-badge--approved  { background: rgba(39, 35, 92, 0.08); color: #27235c; border: 1px solid rgba(39, 35, 92, 0.25); }
+.op-badge--approved  .op-status-dot { background: #27235c; }
+
+.op-badge--sent      { background: rgba(59, 130, 246, 0.1); color: #1d4ed8; border: 1px solid rgba(59, 130, 246, 0.3); }
+.op-badge--sent      .op-status-dot { background: #3b82f6; }
+
+.op-badge--accepted  { background: rgba(16, 185, 129, 0.1); color: #047857; border: 1px solid rgba(16, 185, 129, 0.3); }
+.op-badge--accepted  .op-status-dot { background: #10b981; }
+
+.op-badge--rejected  { background: rgba(239, 68, 68, 0.1); color: #b91c1c; border: 1px solid rgba(239, 68, 68, 0.3); }
+.op-badge--rejected  .op-status-dot { background: #ef4444; }
+
+.op-badge--expired   { background: rgba(107, 114, 128, 0.1); color: #4b5563; border: 1px solid rgba(107, 114, 128, 0.3); }
+.op-badge--expired   .op-status-dot { background: #6b7280; }
+
+.op-badge--withdrawn { background: rgba(249, 115, 22, 0.1); color: #c2410c; border: 1px solid rgba(249, 115, 22, 0.3); }
+.op-badge--withdrawn .op-status-dot { background: #f97316; }
+
+.op-badge--default   { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+.op-badge--default   .op-status-dot { background: #9ca3af; }
+
+/* ── Viewer Card ────────────────────────────────────────────── */
+.op-viewer-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Toolbar */
+.op-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  background: #27235c;
+}
+
+.op-viewer-toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.op-viewer-toolbar__left i {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.op-viewer-toolbar__title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.op-viewer-chip {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.op-viewer-toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.op-toolbar-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.op-toolbar-btn:hover {
+  background: linear-gradient(90deg, #97247e, #e01950);
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.4);
+}
+
+/* ── Stage — paper-centered layout ─────────────────────────── */
+/*
+  FIX for "not properly aligned":
+  The stage uses a column-flex layout and the iframe lives inside
+  an op-viewer-paper wrapper that is centered via margin: 0 auto.
+  The iframe itself gets a FIXED pixel width (not %) so the HTML
+  template inside renders at the correct document width every time.
+*/
+.op-viewer-stage {
+  background: #e8eaef;
+  padding: 28px 20px 36px 20px;
+  min-height: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.op-viewer-paper {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 6px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.op-preview-iframe {
+  display: block;
+  width: 100%;
+  min-height: 1000px;
+  border: none;
+  background: #ffffff;
+}
+
+/* ── Empty State ────────────────────────────────────────────── */
+.op-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 12px;
+  min-height: 320px;
+}
+
+.op-empty-state__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(39, 35, 92, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #27235c;
+  opacity: 0.55;
+}
+
+.op-empty-state__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+}
+
+.op-empty-state__desc {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+  max-width: 380px;
+  line-height: 1.65;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .op-meta-strip { gap: 8px; }
+  .op-meta-item  { min-width: calc(50% - 20px); }
+  .op-meta-sep   { display: none; }
+}
+
+@media (max-width: 768px) {
+  .op-page { padding: 12px 12px 48px 12px; }
+
+  .op-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .op-header-card__actions {
+    width: 100%;
+  }
+
+  .op-btn-action { flex: 1; justify-content: center; }
+
+  .op-meta-strip { flex-direction: column; gap: 10px; padding: 12px 14px; }
+  .op-meta-item  { min-width: 100%; }
+
+  .op-viewer-stage { padding: 16px 10px 24px 10px; min-height: 500px; }
+  .op-preview-iframe { min-height: 600px; }
+}
+
+@media (max-width: 576px) {
+  .op-page-title         { font-size: 0.95rem; }
+  .op-offer-number-pill  { font-size: 0.65rem; }
+  .op-viewer-toolbar     { padding: 9px 12px; }
+  .op-viewer-toolbar__title { font-size: 12px; }
+}

@@ -1,0 +1,275 @@
+/* ==================== BACKDROP ==================== */
+.com-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.com-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 520px;
+  z-index: 1050;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.com-modal-dialog {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ==================== HEADER ==================== */
+.com-modal-header {
+  background: #27235c;
+  color: #ffffff;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.com-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.com-close-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.com-close-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ==================== BODY ==================== */
+.com-modal-body {
+  padding: 18px 18px 10px 18px;
+  background: #ffffff;
+}
+
+/* ==================== CANDIDATE CARD ==================== */
+.com-candidate-card {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.com-candidate-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.com-candidate-label {
+  font-weight: 600;
+  color: #64748b;
+}
+
+.com-candidate-value {
+  color: #334155;
+  font-weight: 500;
+}
+
+/* ==================== FORM ==================== */
+.com-form-group {
+  margin-bottom: 14px;
+}
+
+.com-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.com-required {
+  color: #ef4444;
+}
+
+/* ==================== SELECT ==================== */
+.com-form-select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 9px;
+  font-size: 13px;
+  color: #334155;
+  background: #ffffff;
+}
+
+.com-form-select:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+/* ==================== INFO ALERT ==================== */
+.com-info-alert {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 6px 8px;
+  margin-top: 6px;
+}
+
+/* ==================== FOOTER ==================== */
+.com-modal-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: #ffffff;
+}
+
+/* ==================== BUTTONS ==================== */
+.com-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.com-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.com-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.com-btn-submit:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.com-btn-submit:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* ==================== SPINNER ==================== */
+.com-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: com-spin 0.7s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes com-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 576px) {
+  .com-modal-container {
+    width: 95%;
+  }
+}
+
+/* ── Candidate card with avatar ────────────────────────────── */
+.com-candidate-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.com-candidate-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #003366;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 700;
+  flex-shrink: 0;
+}
+.com-candidate-name  { font-weight: 600; font-size: 15px; }
+.com-candidate-email { font-size: 13px; color: #6c757d; margin-top: 2px; }
+
+/* ── Offer type context card ───────────────────────────────── */
+.com-type-context-card {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  transition: all 0.25s ease;
+}
+.com-type-context-header {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+.com-type-context-list {
+  margin: 0; padding-left: 18px;
+  font-size: 12.5px;
+  opacity: 0.85;
+}
+.com-type-context-list li { margin-bottom: 4px; }
+
+/* ── Backdrop blocked during loading ──────────────────────── */
+.com-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1040;
+}

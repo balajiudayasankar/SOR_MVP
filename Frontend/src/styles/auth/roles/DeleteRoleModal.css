@@ -1,0 +1,233 @@
+/* ==================== BACKDROP ==================== */
+.drm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.drm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 490px;
+  z-index: 1050;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.drm-modal-dialog {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.drm-modal-header {
+  background: #27235c;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.drm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.drm-close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drm-close-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==================== BODY ==================== */
+.drm-modal-body {
+  padding: 16px 15px 4px 15px;
+  background: #fff;
+}
+
+/* ==================== CONFIRMATION TEXT ==================== */
+.drm-confirm-text {
+  color: #22223b;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.drm-role-name {
+  color: #b91c1c;
+  background: #fee2e2;
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* ==================== WARNING BOX ==================== */
+.drm-warning-box {
+  background: #fef9c3;
+  border: 1px solid #facc15;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-bottom: 9px;
+  text-align: left;
+}
+
+.drm-warning-title {
+  align-items: center;
+  gap: 6px;
+  color: #b45309;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.drm-warning-text {
+  color: #a16207;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.drm-warning-emphasis {
+  font-weight: 900;
+}
+
+.drm-warning-subtitle {
+  color: #a16207;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.drm-warning-list {
+  margin: 0;
+  padding-left: 19px;
+  color: #a16207;
+  font-size: 12px;
+}
+
+/* ==================== INFO ALERT ==================== */
+.drm-info-alert {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 5px 8px;
+  gap: 5px;
+}
+
+/* ==================== FOOTER ==================== */
+.drm-modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* ==================== BUTTONS ==================== */
+.drm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.drm-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.drm-btn-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.drm-btn-delete {
+  background: linear-gradient(90deg, #e01950 0%, #e01950 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.drm-btn-delete:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.drm-btn-delete:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* ==================== SPINNER ==================== */
+.drm-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: drm-spin 0.7s linear infinite;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+@keyframes drm-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

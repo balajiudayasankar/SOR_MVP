@@ -1,0 +1,408 @@
+/* ============================================================
+   Candidate Detail — Scoped Styles  (Prefix: cd-)
+   Theme: #27235c navy | gradient #97247e → #e01950
+============================================================ */
+
+/* ── Page Shell ─────────────────────────────────────────────── */
+.cd-page {
+  padding: 16px 20px 56px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* ── Loading ────────────────────────────────────────────────── */
+.cd-loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.cd-loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #27235c;
+  border-radius: 50%;
+  animation: cd-spin 0.75s linear infinite;
+}
+
+@keyframes cd-spin { to { transform: rotate(360deg); } }
+
+.cd-loading-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* ── Not Found ──────────────────────────────────────────────── */
+.cd-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+  gap: 12px;
+  text-align: center;
+}
+
+.cd-not-found__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(39, 35, 92, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #27235c;
+  opacity: 0.6;
+}
+
+.cd-not-found__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+}
+
+.cd-not-found__desc {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+  max-width: 340px;
+}
+
+/* ── Header Card ────────────────────────────────────────────── */
+.cd-header-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #27235c;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0.875rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cd-header-card__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cd-header-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cd-header-v-divider {
+  width: 1px;
+  height: 38px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
+
+/* ── Candidate Avatar ───────────────────────────────────────── */
+.cd-header-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #27235c 0%, #3b3580 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(39, 35, 92, 0.28);
+  user-select: none;
+}
+
+.cd-header-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cd-candidate-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cd-header-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ── Active / Inactive Pill ─────────────────────────────────── */
+.cd-active-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.cd-active-pill__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cd-active-pill--active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.cd-active-pill--active .cd-active-pill__dot {
+  background: #10b981;
+}
+
+.cd-active-pill--inactive {
+  background: rgba(107, 114, 128, 0.1);
+  color: #4b5563;
+  border: 1px solid rgba(107, 114, 128, 0.28);
+}
+
+.cd-active-pill--inactive .cd-active-pill__dot {
+  background: #9ca3af;
+}
+
+/* ── Back Button ────────────────────────────────────────────── */
+.cd-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 6px 8px;
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.cd-btn-back i    { font-size: 17px; line-height: 1; }
+.cd-btn-back span { font-size: 13px; font-weight: 600; }
+
+.cd-btn-back:hover {
+  background: #27235c;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.22);
+}
+
+.cd-btn-back:active { background: #1f1c4b; }
+
+/* ── Shared Button System ───────────────────────────────────── */
+.cd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  border: none;
+  line-height: 1;
+}
+
+.cd-btn i { font-size: 14px; }
+
+/* Outline — Edit */
+.cd-btn--outline {
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  color: #27235c;
+}
+
+.cd-btn--outline:hover {
+  background: rgba(39, 35, 92, 0.06);
+  box-shadow: 0 2px 8px rgba(39, 35, 92, 0.14);
+}
+
+/* Teal — Move to Offer Stage */
+.cd-btn--teal {
+  background: #ffffff;
+  border: 1.5px solid #0d9488;
+  color: #0d9488;
+}
+
+.cd-btn--teal:hover {
+  background: rgba(13, 148, 136, 0.06);
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.16);
+}
+
+/* Primary gradient — Create Offer */
+.cd-btn--primary {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+}
+
+.cd-btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(151, 36, 126, 0.38);
+}
+
+/* ── Cards Grid ─────────────────────────────────────────────── */
+.cd-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.cd-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.cd-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: #27235c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cd-card__header i {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.cd-card__body {
+  padding: 14px 16px;
+}
+
+/* ── Detail Grid ────────────────────────────────────────────── */
+.cd-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.cd-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #f8f9fc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: border-color 0.15s ease;
+}
+
+.cd-detail-item:hover {
+  border-color: rgba(39, 35, 92, 0.2);
+}
+
+/* Full-width item (e.g. Address) */
+.cd-detail-item--full {
+  grid-column: 1 / -1;
+}
+
+.cd-detail-item__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.cd-detail-item__value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  word-break: break-word;
+}
+
+.cd-detail-item__value i {
+  font-size: 12px;
+  color: #27235c;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.cd-detail-item__value--mono {
+  font-family: monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+}
+
+.cd-detail-item__value--email {
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cd-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cd-page { padding: 12px 12px 48px 12px; }
+
+  .cd-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cd-header-card__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .cd-btn { flex: 1; justify-content: center; }
+
+  .cd-detail-grid { grid-template-columns: 1fr; }
+  .cd-detail-item--full { grid-column: 1; }
+}
+
+@media (max-width: 480px) {
+  .cd-candidate-name { font-size: 0.9rem; }
+  .cd-header-avatar  { width: 36px; height: 36px; font-size: 13px; }
+}

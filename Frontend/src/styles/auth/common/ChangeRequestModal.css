@@ -1,0 +1,357 @@
+/* ==================== BACKDROP ==================== */
+.crm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.crm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 700px;
+  max-height: 85vh;
+  z-index: 1050;
+  flex-direction: column;
+}
+
+.crm-modal-container-pending {
+  max-width: 600px;
+  max-height: 75vh;
+  display: flex;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.crm-modal-dialog {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.crm-modal-header {
+  background: #27235c;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0.5rem 0.5rem 0 0;
+  flex-shrink: 0;
+}
+
+.crm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.crm-close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crm-close-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==================== BODY ==================== */
+.crm-modal-body {
+  padding: 20px;
+  background: #fff;
+  text-align: left;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ==================== FORM ==================== */
+.crm-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ==================== ALERTS ==================== */
+.crm-alert-danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  color: #b91c1c;
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  align-items: flex-start;
+}
+
+.crm-alert-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.crm-alert-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.crm-alert-message {
+  font-size: 13px;
+  margin: 0;
+}
+
+.crm-alert-info {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  color: #0369a1;
+  font-size: 14px;
+}
+
+/* ==================== INFO SECTION ==================== */
+.crm-info-section {
+  margin-bottom: 24px;
+}
+
+.crm-info-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crm-info-list {
+  margin: 0;
+  padding-left: 24px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==================== FORM GROUPS ==================== */
+.crm-form-group {
+  margin-bottom: 20px;
+}
+
+.crm-form-label {
+  display: block;
+  font-weight: 600;
+  color: #334155;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.crm-required-asterisk {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.crm-form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.crm-form-input:focus {
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.crm-form-input:disabled {
+  background: #f0f0f0;
+  color: #666;
+  cursor: not-allowed;
+  border: 1px solid #d0d0d0;
+}
+
+.crm-form-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  max-height: 120px;
+}
+
+.crm-form-textarea:focus {
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.crm-form-help {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.crm-form-help-error {
+  color: #dc3545;
+  margin-left: 8px;
+}
+
+/* ==================== PASSWORD FIELD ==================== */
+.crm-password-wrapper {
+  position: relative;
+}
+
+.crm-password-input {
+  padding-right: 45px;
+}
+
+.crm-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.crm-password-toggle:hover {
+  color: #27235c;
+}
+
+/* ==================== CHARACTER COUNT ==================== */
+.crm-char-count {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.crm-char-count-error {
+  color: #dc3545;
+  margin-left: 8px;
+}
+
+/* ==================== FOOTER ==================== */
+.crm-modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ==================== BUTTONS ==================== */
+.crm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crm-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.crm-btn-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.crm-btn-primary {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.crm-btn-primary:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.crm-btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ==================== SPINNER ==================== */
+.crm-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: crm-spin 0.7s linear infinite;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+@keyframes crm-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

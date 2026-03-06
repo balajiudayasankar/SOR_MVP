@@ -1,0 +1,210 @@
+/* ============================================================
+   Offer Audit Log Page  (Prefix: oal-)
+   Theme: #27235c navy | gradient #97247e → #e01950
+============================================================ */
+
+/* ── Page ─────────────────────────────────────────────────── */
+.oal-page {
+  padding: 16px 20px 56px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* ── Page Header ──────────────────────────────────────────── */
+.oal-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.oal-page-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.oal-page-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Back Button */
+.oal-btn-back {
+  width: 78px;
+  height: 38px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #27235c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.oal-btn-back:hover {
+  background: #27235c;
+  color: #ffffff;
+  border-color: #27235c;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.2);
+}
+
+/* Titles */
+.oal-page-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  text-align: left;
+}
+
+.oal-page-subtitle {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.oal-page-subtitle i { font-size: 12px; }
+
+/* Stats Pill */
+.oal-stats-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #27235c;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.oal-stats-pill i { font-size: 13px; }
+
+/* Refresh Button */
+.oal-btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.oal-btn-refresh:hover:not(:disabled) {
+  background: #27235c;
+  color: #ffffff;
+  border-color: #27235c;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.2);
+}
+
+.oal-btn-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.oal-btn-refresh i { font-size: 13px; }
+
+/* Spin animation for refresh icon */
+.oal-spin {
+  animation: oal-rotate 0.75s linear infinite;
+  display: inline-block;
+}
+
+@keyframes oal-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Info Alert ───────────────────────────────────────────── */
+.oal-info-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 9px 12px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.oal-info-alert i {
+  font-size: 13px;
+  color: #27235c;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.oal-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.oal-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  background: #27235c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.oal-card-header i { font-size: 15px; opacity: 0.85; }
+
+.oal-card-header-pill {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.oal-card-body {
+  padding: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .oal-page          { padding: 12px 12px 48px 12px; }
+  .oal-page-header   { flex-direction: column; align-items: flex-start; }
+  .oal-page-header-right { width: 100%; justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .oal-page-title    { font-size: 1.15rem; }
+  .oal-stats-pill    { font-size: 11px; padding: 4px 10px; }
+  .oal-btn-refresh   { flex: 1; justify-content: center; }
+}

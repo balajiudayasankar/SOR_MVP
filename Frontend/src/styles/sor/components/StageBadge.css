@@ -1,0 +1,17 @@
+.sor-badge {
+  display: inline-block;
+  padding: 0.3em 0.75em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+.sor-badge-primary   { background: #0d6efd; color: #fff; }
+.sor-badge-secondary { background: #6c757d; color: #fff; }
+.sor-badge-success   { background: #198754; color: #fff; }
+.sor-badge-warning   { background: #ffc107; color: #000; }
+.sor-badge-danger    { background: #dc3545; color: #fff; }
+.sor-badge-info      { background: #0dcaf0; color: #000; }
+.sor-badge-purple    { background: #6f42c1; color: #fff; }
+.sor-badge-teal      { background: #20c997; color: #fff; }
+.sor-badge-orange    { background: #fd7e14; color: #fff; }

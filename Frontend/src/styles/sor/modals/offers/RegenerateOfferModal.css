@@ -1,0 +1,153 @@
+/* ==================== BACKDROP ==================== */
+.rom-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== CONTAINER ==================== */
+.rom-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 600px;
+  z-index: 1050;
+}
+
+/* ==================== DIALOG ==================== */
+.rom-modal-dialog {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ==================== HEADER ==================== */
+.rom-modal-header {
+  background: #27235c;
+  color: #ffffff;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.rom-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rom-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==================== BODY ==================== */
+.rom-modal-body {
+  padding: 18px;
+}
+
+/* ==================== FORM ==================== */
+.rom-form-group {
+  margin-bottom: 14px;
+}
+
+.rom-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.rom-required {
+  color: #ef4444;
+}
+
+.rom-textarea,
+.rom-form-select {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 9px;
+  font-size: 13px;
+}
+
+.rom-textarea:focus,
+.rom-form-select:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+/* ==================== INFO ALERT ==================== */
+.rom-confirm-alert {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* ==================== FOOTER ==================== */
+.rom-modal-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.rom-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rom-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Spinner */
+.rom-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: rom-spin 0.7s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes rom-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,118 @@
+.pagination-footer-container {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  flex-wrap: wrap;
+ 
+  position: relative;
+  isolation: isolate;  
+  z-index: 1;
+  overflow: visible;
+}
+ 
+.pagination-footer-container,
+.pagination-footer-container * {
+  pointer-events: auto;
+}
+ 
+.pagination-footer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.pagination-footer-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+ 
+.pagination-footer-dropdown-wrapper {
+  position: relative;
+}
+ 
+.pagination-footer-items-button {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: #fff;
+  color: rgb(39, 35, 92);
+  min-width: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  height: 32px;
+}
+ 
+.pagination-footer-dropdown {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  min-width: 70px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  z-index: 10;
+}
+ 
+.pagination-footer-option {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  text-align: center;
+}
+ 
+.pagination-footer-option:hover {
+  background: #27235c;
+  color: white;
+}
+ 
+.pagination-footer-active {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+ 
+.pagination-footer-status {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+ 
+.pagination-footer-pages {
+  display: flex;
+  list-style: none;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+}
+ 
+.pagination-footer-page-link {
+  min-width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.pagination-footer-page-item.active .pagination-footer-page-link {
+  background: #27235c;
+  color: white;
+}
+ 
+.pagination-footer-page-item.disabled .pagination-footer-page-link {
+  opacity: 0.5;
+  pointer-events: none;
+}
+ 
+ 

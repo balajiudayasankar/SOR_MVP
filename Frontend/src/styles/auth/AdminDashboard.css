@@ -1,0 +1,282 @@
+/* ADMIN DASHBOARD - DARK BLUE/PURPLE PROFESSIONAL DESIGN */
+
+/* LOADING STATE */
+.ada-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+/* MAIN DASHBOARD */
+.ada-dashboard {
+  padding: 0;
+  background: #f8f9fa;
+}
+
+/* STATISTICS CARDS  */
+.ada-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ada-stat-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #27235c;
+  padding: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ada-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 35, 92, 0.12);
+}
+
+.ada-stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ada-stat-icon-primary {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+  color: #1E40AF;
+}
+
+.ada-stat-icon-success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.1) 100%);
+  color: #10b981;
+}
+
+.ada-stat-icon-warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.1) 100%);
+  color: #f59e0b;
+}
+
+.ada-stat-icon-info {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+  color: #3b82f6;
+}
+
+.ada-stat-icon-purple {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+  color: #8b5cf6;
+}
+
+.ada-stat-icon-cyan {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+  color: #60A5FA;
+}
+
+.ada-stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: center;
+  align-items: center;
+}
+
+.ada-stat-content h2 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+  line-height: 1;
+}
+
+.ada-stat-content p {
+  font-size: 0.8125rem;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 500;
+}
+
+.ada-stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+.ada-trend-icon-up {
+  color: #28a745;
+}
+
+.ada-trend-icon-down {
+  color: #dc3545;
+}
+
+.ada-trend-neutral {
+  color: #6c757d;
+}
+
+/* HIDE QUICK ACTIONS CARD */
+.ada-actions-card {
+  display: none;
+}
+
+.ada-actions-grid {
+  display: none;
+}
+
+.ada-action-btn {
+  display: none;
+}
+
+/* CHARTS GRID - 3 COLUMN LAYOUT */
+.ada-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.ada-chart-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #27235c;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.ada-chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 35, 92, 0.12);
+}
+
+/* CARD HEADER -  */
+.ada-card-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #27235c 0%, #3b4d8f 100%);
+}
+
+.ada-card-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ada-card-title i {
+  font-size: 1.125rem;
+  color: #ffffff;
+}
+
+.ada-card-badge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.ada-card-badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* CARD BODY */
+.ada-card-body {
+  padding: 1.25rem;
+}
+
+.ada-no-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  min-height: 240px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1400px) {
+  .ada-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ada-charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .ada-charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ada-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ada-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ada-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ada-stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ada-stat-icon {
+    margin: 0 auto;
+  }
+}
+
+/* SCROLL BEHAVIOR */
+.ada-dashboard {
+  overflow-x: hidden;
+}
+
+/* CHART RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  .ada-card-body {
+    padding: 1rem;
+  }
+
+  .ada-card-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .ada-card-title {
+    font-size: 0.875rem;
+  }
+
+  .ada-card-badge {
+    font-size: 0.6875rem;
+    padding: 0.3125rem 0.625rem;
+  }
+}

@@ -1,0 +1,177 @@
+/* ==================== BACKDROP ==================== */
+.dom-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.dom-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  max-width: 420px;
+  z-index: 1050;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.dom-modal-dialog {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ==================== HEADER ==================== */
+.dom-modal-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.dom-danger-header {
+  background: #27235c;
+}
+
+.dom-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dom-close-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dom-close-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ==================== BODY ==================== */
+.dom-modal-body {
+  padding: 22px 18px 12px 18px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.dom-warning-icon {
+  font-size: 32px;
+  color: #e01950;
+  margin-bottom: 10px;
+}
+
+.dom-confirm-text {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.dom-offer-number {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.dom-danger-text {
+  font-size: 12px;
+  color: #dc3545;
+}
+
+/* ==================== FOOTER ==================== */
+.dom-modal-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: #ffffff;
+}
+
+/* ==================== BUTTONS ==================== */
+.dom-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.dom-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.dom-btn-delete {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.dom-btn-delete:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.dom-btn-delete:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* ==================== SPINNER ==================== */
+.dom-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: dom-spin 0.7s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes dom-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 576px) {
+  .dom-modal-container {
+    width: 95%;
+  }
+}

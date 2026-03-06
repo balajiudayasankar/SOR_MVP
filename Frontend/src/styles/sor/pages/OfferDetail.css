@@ -1,0 +1,467 @@
+/* ============================================================
+   Offer Detail — Scoped Styles  (Prefix: od-)
+   Theme: #27235c navy | gradient #97247e → #e01950
+============================================================ */
+
+/* ── Page Shell ─────────────────────────────────────────────── */
+.od-page {
+  padding: 16px 20px 56px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* ── Loading ────────────────────────────────────────────────── */
+.od-loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.od-loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #27235c;
+  border-radius: 50%;
+  animation: od-spin 0.75s linear infinite;
+}
+
+@keyframes od-spin { to { transform: rotate(360deg); } }
+
+.od-loading-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* ── Not Found ──────────────────────────────────────────────── */
+.od-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+  gap: 12px;
+  text-align: center;
+}
+
+.od-not-found__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(39, 35, 92, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #27235c;
+  opacity: 0.6;
+}
+
+.od-not-found__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+}
+
+.od-not-found__desc {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+  max-width: 340px;
+}
+
+/* ── Header Card ────────────────────────────────────────────── */
+.od-header-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #27235c;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0.875rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.od-header-card__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.od-header-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.od-header-v-divider {
+  width: 1px;
+  height: 34px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.od-header-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.od-offer-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27235c;
+  margin: 0;
+  font-family: monospace;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.od-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.od-version-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2px 9px;
+}
+
+/* ── Back Button ────────────────────────────────────────────── */
+.od-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 6px 8px;
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.od-btn-back i    { font-size: 17px; line-height: 1; }
+.od-btn-back span { font-size: 13px; font-weight: 600; }
+
+.od-btn-back:hover {
+  background: #27235c;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.22);
+}
+
+.od-btn-back:active { background: #1f1c4b; }
+
+/* ── Action Buttons ─────────────────────────────────────────── */
+.od-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  border: none;
+  line-height: 1;
+}
+
+.od-btn i { font-size: 14px; }
+
+/* Outline — Edit */
+.od-btn--outline {
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  color: #27235c;
+}
+
+.od-btn--outline:hover {
+  background: rgba(39, 35, 92, 0.06);
+  box-shadow: 0 2px 8px rgba(39, 35, 92, 0.14);
+}
+
+/* Teal — Preview */
+.od-btn--teal {
+  background: #ffffff;
+  border: 1.5px solid #0d9488;
+  color: #0d9488;
+}
+
+.od-btn--teal:hover {
+  background: rgba(13, 148, 136, 0.06);
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.18);
+}
+
+/* Primary gradient — Submit */
+.od-btn--primary {
+  background: linear-gradient(90deg, #27235c 0%, #3b3580 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(39, 35, 92, 0.28);
+}
+
+.od-btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(39, 35, 92, 0.38);
+}
+
+/* Success — Download */
+.od-btn--success {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+}
+
+.od-btn--success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(151, 36, 126, 0.38);
+}
+
+/* Warning — Regenerate */
+.od-btn--warning {
+  background: #ffffff;
+  border: 1.5px solid #d97706;
+  color: #b45309;
+}
+
+.od-btn--warning:hover {
+  background: rgba(217, 119, 6, 0.06);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.18);
+}
+
+/* ── Two-Column Content Grid ───────────────────────────────── */
+.od-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0.875rem;
+  align-items: start;
+}
+
+.od-col-main    { display: flex; flex-direction: column; gap: 0.875rem; }
+.od-col-sidebar { display: flex; flex-direction: column; gap: 0.875rem; }
+
+/* ── Card ───────────────────────────────────────────────────── */
+.od-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.od-card--mb { margin-bottom: 0; }
+
+.od-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: #27235c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.od-card__header i {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.od-card__body {
+  padding: 14px 16px;
+}
+
+/* ── Detail Grid (inside SectionCard) ──────────────────────── */
+.od-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 12px;
+}
+
+.od-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #f8f9fc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 9px 12px;
+  transition: border-color 0.15s ease;
+}
+
+.od-detail-item:hover {
+  border-color: rgba(39, 35, 92, 0.2);
+}
+
+.od-detail-item__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.od-detail-item__value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+/* ── Workflow ────────────────────────────────────────────────── */
+.od-workflow-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.od-workflow-number {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #27235c;
+  font-family: monospace;
+}
+
+.od-workflow-status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.od-workflow-status-badge--progress {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.od-workflow-status-badge--done {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* ── Quick Links ────────────────────────────────────────────── */
+.od-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+}
+
+.od-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #f8f9fc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.od-link-btn > i:first-child {
+  font-size: 15px;
+  color: #27235c;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.od-link-btn > span { flex: 1; }
+
+.od-link-btn__chevron {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.od-link-btn:hover {
+  background: rgba(39, 35, 92, 0.05);
+  border-color: rgba(39, 35, 92, 0.2);
+  transform: translateX(2px);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .od-content-grid {
+    grid-template-columns: 1fr 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .od-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .od-col-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .od-page { padding: 12px 12px 48px 12px; }
+
+  .od-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .od-header-card__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .od-btn { flex: 1; justify-content: center; }
+
+  .od-detail-grid { grid-template-columns: 1fr; }
+
+  .od-col-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .od-offer-number { font-size: 0.82rem; }
+  .od-btn          { font-size: 12px; padding: 6px 10px; }
+}

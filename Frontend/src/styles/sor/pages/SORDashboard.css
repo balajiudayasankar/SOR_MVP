@@ -1,0 +1,45 @@
+.sor-dashboard { padding: 1.5rem; }
+.sor-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.sor-page-title { font-size: 1.4rem; font-weight: 700; color: #212529; margin-bottom: 0; }
+.sor-page-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; }
+.sor-metric-card {
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+.sor-metric-card.clickable { cursor: pointer; }
+.sor-metric-card.clickable:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+.sor-metric-card--primary  { border-color: #cfe2ff; background: linear-gradient(135deg,#fff,#f0f6ff); }
+.sor-metric-card--warning  { border-color: #fff3cd; background: linear-gradient(135deg,#fff,#fffbf0); }
+.sor-metric-card--success  { border-color: #d1e7dd; background: linear-gradient(135deg,#fff,#f0fff4); }
+.sor-metric-card--danger   { border-color: #f8d7da; background: linear-gradient(135deg,#fff,#fff5f5); }
+.sor-metric-card--info     { border-color: #cff4fc; background: linear-gradient(135deg,#fff,#f0fbff); }
+.sor-metric-card--purple   { border-color: #e2d9f3; background: linear-gradient(135deg,#fff,#f8f4ff); }
+.sor-metric-card--orange   { border-color: #ffe5d0; background: linear-gradient(135deg,#fff,#fff8f4); }
+.sor-metric-card--teal     { border-color: #c3f3e3; background: linear-gradient(135deg,#fff,#f0fff9); }
+.sor-metric-card__icon     { font-size: 2.2rem; }
+.sor-metric-card__value    { font-size: 1.8rem; font-weight: 700; color: #212529; line-height: 1; }
+.sor-metric-card__title    { font-size: 0.82rem; color: #6c757d; margin-top: 4px; font-weight: 500; }
+.sor-info-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e9ecef;
+}
+.sor-info-card__label { font-size: 0.8rem; color: #6c757d; font-weight: 500; }
+.sor-info-card__value { font-size: 1.4rem; font-weight: 700; color: #212529; }
+.sor-section-title {
+  font-size: 0.85rem; font-weight: 700; color: #6c757d;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;
+}

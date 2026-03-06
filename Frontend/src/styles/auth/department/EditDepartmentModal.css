@@ -1,0 +1,426 @@
+/* ==================== BACKDROP ==================== */
+.edm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.edm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1050;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.edm-modal-dialog {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.edm-modal-header {
+  background: #27235c;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.edm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edm-close-button {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* ==================== BODY ==================== */
+.edm-modal-body {
+  padding: 16px 15px;
+  background: #fff;
+  overflow: visible;
+}
+
+.edm-form {
+  margin: 0;
+}
+
+/* ==================== LOADING STATE ==================== */
+.edm-loading-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.edm-loading-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ==================== FORM LAYOUT ==================== */
+.edm-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edm-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.edm-form-row-full {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ==================== FORM GROUPS ==================== */
+.edm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.edm-form-group:focus-within {
+  z-index: 9998;
+}
+
+.edm-form-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==================== FORM INPUTS ==================== */
+.edm-form-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: #fff;
+  color: #334155;
+}
+
+.edm-form-input::placeholder {
+  color: #9ca3af;
+}
+
+.edm-form-input:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.edm-form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.edm-form-input-readonly {
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.edm-form-input-uppercase {
+  text-transform: uppercase;
+}
+
+.edm-form-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ============================================
+   CUSTOM DROPDOWN - NATIONALITY STYLE
+   ============================================ */
+
+.edm-custom-dropdown {
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  background: #ffffff;
+  color: #212529;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  z-index: 1;
+}
+
+.edm-custom-dropdown:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.edm-custom-dropdown:hover {
+  border-color: #27235c;
+}
+
+.edm-custom-dropdown.edm-error {
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.02);
+}
+
+.edm-custom-dropdown.edm-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.edm-custom-dropdown.edm-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.edm-custom-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding-right: 1.5rem;
+}
+
+.edm-custom-selected span:first-child {
+  flex: 1;
+  text-align: left;
+}
+
+.edm-placeholder-text {
+  color: #adb5bd;
+  opacity: 0.8;
+}
+
+/* Arrow positioned close to edge */
+.edm-custom-arrow {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #6c757d;
+  border-bottom: 2px solid #6c757d;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+/* Arrow rotation when open */
+.edm-custom-dropdown:focus-within .edm-custom-arrow {
+  transform: translateY(-50%) rotate(225deg);
+}
+
+/* Dropdown menu */
+.edm-custom-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow-y: auto;
+  animation: edmDropdownFadeIn 0.15s ease-out;
+  min-width: 100%;
+}
+
+@keyframes edmDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.edm-custom-option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  transition: all 0.12s ease;
+  font-size: 0.9375rem;
+  color: #111827;
+}
+
+.edm-custom-option:hover {
+  background-color: #27235c;
+  color: #ffffff;
+}
+
+.edm-custom-option:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.edm-custom-option:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.edm-custom-option-active {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.edm-custom-option-active:hover {
+  background-color: #27235c;
+  color: #ffffff;
+}
+
+/* Scrollbar styling - EXACT MATCH TO NATIONALITY DROPDOWN */
+.edm-custom-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.edm-custom-menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.edm-custom-menu::-webkit-scrollbar-thumb {
+  background: #27235c;
+  border-radius: 10px;
+}
+
+.edm-custom-menu::-webkit-scrollbar-thumb:hover {
+  background: #1f1c4b;
+}
+
+/* Firefox scrollbar */
+.edm-custom-menu {
+  scrollbar-width: thin;
+  scrollbar-color: #27235c #f1f1f1;
+}
+
+/* ==================== HINT TEXT ==================== */
+.edm-readonly-hint {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.edm-info-hint {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.edm-warning-hint {
+  font-size: 11px;
+  color: #f59e0b;
+  margin-top: 4px;
+}
+
+/* ==================== FOOTER ==================== */
+.edm-modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* ==================== BUTTONS ==================== */
+.edm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.edm-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.edm-btn-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.edm-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 16px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edm-btn-submit:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.edm-btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .edm-modal-container {
+    width: 95%;
+  }
+
+  .edm-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+

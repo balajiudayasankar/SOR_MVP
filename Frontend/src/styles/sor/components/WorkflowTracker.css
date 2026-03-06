@@ -1,0 +1,36 @@
+.workflow-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 1rem 0;
+}
+.wf-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: #f8f9fa;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #dee2e6;
+  transition: all 0.2s;
+}
+.wf-step--active {
+  background: #fff8e1;
+  border-left-color: #ffc107;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
+}
+.wf-step--success { border-left-color: #198754; }
+.wf-step--danger  { border-left-color: #dc3545; }
+.wf-step--warning { border-left-color: #ffc107; }
+.wf-step__icon {
+  font-size: 1.4rem;
+  min-width: 2rem;
+  text-align: center;
+}
+.wf-step__role   { font-size: 0.9rem; color: #495057; }
+.wf-step__status { font-size: 0.82rem; font-weight: 600; margin-top: 2px; }
+.wf-step__comments, .wf-step__date { margin-top: 4px; }
+.wf-connector {
+  display: none; /* using margin-bottom gap instead */
+}

@@ -1,0 +1,140 @@
+/* ==================== BACKDROP ==================== */
+.mosm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(39, 35, 92, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 1040;
+}
+
+/* ==================== CONTAINER ==================== */
+.mosm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  max-width: 420px; /* Compact width */
+  z-index: 1050;
+}
+
+/* ==================== DIALOG ==================== */
+.mosm-modal-dialog {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.mosm-modal-header {
+  background: #27235c;
+  color: #ffffff;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.mosm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mosm-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==================== BODY ==================== */
+.mosm-modal-body {
+  padding: 20px;
+}
+
+/* Confirmation Card */
+.mosm-confirm-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.mosm-icon {
+  font-size: 22px;
+  color: #27235c;
+}
+
+.mosm-main-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mosm-sub-text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.mosm-badge {
+  background: #6f42c1;
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
+/* ==================== FOOTER ==================== */
+.mosm-modal-footer {
+  padding: 14px 18px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ==================== BUTTONS ==================== */
+.mosm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mosm-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==================== SPINNER ==================== */
+.mosm-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: mosm-spin 0.7s linear infinite;
+}
+
+@keyframes mosm-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,360 @@
+/* ============================================================
+   HR Dashboard  (Prefix: hrd-)
+   Theme: #27235c navy | gradient #97247e → #e01950
+============================================================ */
+
+/* ── Page ─────────────────────────────────────────────────── */
+.hrd-page {
+  padding: 16px 20px 56px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Loading ──────────────────────────────────────────────── */
+.hrd-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 14px;
+}
+
+.hrd-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #27235c;
+  border-radius: 50%;
+  animation: hrd-spin 0.75s linear infinite;
+}
+
+@keyframes hrd-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.hrd-loader-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* ── Page Header ──────────────────────────────────────────── */
+.hrd-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.hrd-page-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hrd-page-header-icon {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #27235c, #3b3580);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.25);
+}
+
+.hrd-page-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.hrd-page-subtitle {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.hrd-page-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.hrd-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  font-family: inherit;
+}
+
+.hrd-btn-primary:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 14px rgba(151, 36, 126, 0.35);
+  transform: translateY(-1px);
+}
+
+.hrd-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.hrd-btn-outline:hover {
+  border-color: #27235c;
+  background: rgba(39, 35, 92, 0.04);
+}
+
+/* ── Section Label ────────────────────────────────────────── */
+.hrd-section-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0 2px;
+  margin-bottom: -8px;
+}
+
+.hrd-section-label i { font-size: 13px; color: #27235c; }
+
+/* ── Metrics Grid ─────────────────────────────────────────── */
+.hrd-metrics-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.hrd-metrics-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Metric Card ──────────────────────────────────────────── */
+.hrd-metric-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hrd-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 12px 0 0 12px;
+}
+
+.hrd-metric-card--clickable {
+  cursor: pointer;
+}
+
+.hrd-metric-card--clickable:hover {
+  box-shadow: 0 6px 18px rgba(39, 35, 92, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Color variants — left bar + icon bg */
+.hrd-metric-card--primary::before { background: #27235c; }
+.hrd-metric-card--warning::before { background: #f59e0b; }
+.hrd-metric-card--success::before { background: #10b981; }
+.hrd-metric-card--danger::before  { background: #ef4444; }
+.hrd-metric-card--info::before    { background: #3b82f6; }
+.hrd-metric-card--purple::before  { background: #8b5cf6; }
+.hrd-metric-card--orange::before  { background: #f97316; }
+.hrd-metric-card--teal::before    { background: #14b8a6; }
+
+.hrd-metric-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.hrd-metric-card--primary .hrd-metric-card__icon { background: rgba(39,  35,  92,  0.08); color: #27235c; }
+.hrd-metric-card--warning .hrd-metric-card__icon  { background: rgba(245, 158, 11,  0.1);  color: #d97706; }
+.hrd-metric-card--success .hrd-metric-card__icon  { background: rgba(16,  185, 129, 0.1);  color: #059669; }
+.hrd-metric-card--danger  .hrd-metric-card__icon  { background: rgba(239, 68,  68,  0.1);  color: #dc2626; }
+.hrd-metric-card--info    .hrd-metric-card__icon  { background: rgba(59,  130, 246, 0.1);  color: #2563eb; }
+.hrd-metric-card--purple  .hrd-metric-card__icon  { background: rgba(139, 92,  246, 0.1);  color: #7c3aed; }
+.hrd-metric-card--orange  .hrd-metric-card__icon  { background: rgba(249, 115, 22,  0.1);  color: #ea580c; }
+.hrd-metric-card--teal    .hrd-metric-card__icon  { background: rgba(20,  184, 166, 0.1);  color: #0d9488; }
+
+.hrd-metric-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.hrd-metric-card__value {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hrd-metric-card__title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hrd-metric-card__arrow {
+  font-size: 13px;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+/* ── Info Row ─────────────────────────────────────────────── */
+.hrd-info-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hrd-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 220px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.hrd-info-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(39, 35, 92, 0.07);
+  color: #27235c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.hrd-info-card__label {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.hrd-info-card__value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* ── Quick Actions ────────────────────────────────────────── */
+.hrd-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hrd-quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.hrd-quick-btn i { font-size: 14px; color: #27235c; }
+
+.hrd-quick-btn:hover {
+  border-color: #27235c;
+  background: rgba(39, 35, 92, 0.04);
+  color: #27235c;
+  box-shadow: 0 2px 8px rgba(39, 35, 92, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .hrd-metrics-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hrd-page          { padding: 12px 12px 48px 12px; }
+  .hrd-page-header   { flex-direction: column; align-items: flex-start; }
+  .hrd-metrics-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .hrd-page-header-right { width: 100%; }
+  .hrd-btn-primary,
+  .hrd-btn-outline   { flex: 1; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .hrd-metrics-grid--4 { grid-template-columns: 1fr; }
+  .hrd-page-title      { font-size: 1.15rem; }
+  .hrd-quick-btn       { flex: 1; justify-content: center; }
+}

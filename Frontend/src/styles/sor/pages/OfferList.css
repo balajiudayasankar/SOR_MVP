@@ -1,0 +1,989 @@
+/* OfferList - Scoped Styles (Prefix: ol-) */
+
+.ol-page {
+  padding: 16px 20px 48px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+.ol-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.875rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ol-page-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  text-align:left;
+}
+
+.ol-page-subtitle {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+
+/* ========================================
+   KPI CARDS
+======================================== */
+.ol-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+  align-items: center;
+}
+
+.ol-stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #27235c;
+  transition: all 0.3s ease;
+  min-height: 95px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ol-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.ol-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ol-stat-total .ol-stat-icon {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ol-stat-draft .ol-stat-icon {
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+}
+
+.ol-stat-approved .ol-stat-icon {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.ol-stat-accepted .ol-stat-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.ol-stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  align-items: center;
+}
+
+.ol-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1;
+  margin: 0;
+}
+
+.ol-stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+
+/* ========================================
+   FILTER BAR
+======================================== */
+.ol-filter-bar {
+  display: flex;
+  gap: 0.875rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.875rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 0.875rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ========================================
+   SEARCH INPUT
+======================================== */
+.ol-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 280px;
+  flex: 1;
+  max-width: 400px;
+  height: 38px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.ol-search-wrapper:focus-within {
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.ol-search-icon {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem 0 0.75rem;
+  font-size: 0.875rem;
+  color: #a0aec0;
+  flex-shrink: 0;
+}
+
+.ol-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  padding: 0;
+  height: 100%;
+  color: #212529;
+}
+
+.ol-search-input::placeholder {
+  color: #a0aec0;
+}
+
+.ol-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0 0.625rem;
+  height: 100%;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.ol-search-clear:hover {
+  color: #dc3545;
+}
+
+
+/* ========================================
+   STATUS SELECT
+======================================== */
+.ol-status-wrapper {
+  min-width: 160px;
+  max-width: 210px;
+}
+
+.ol-status-select {
+  width: 100%;
+  height: 38px;
+  padding: 0 0.75rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: auto;
+}
+
+.ol-status-select:focus {
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+  outline: none;
+}
+
+
+/* ========================================
+   CLEAR FILTERS BUTTON
+======================================== */
+.ol-btn-clear {
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 38px;
+}
+
+.ol-btn-clear:hover {
+  background: #6b7280;
+  border-color: #6b7280;
+  color: #ffffff;
+}
+
+.ol-results-count {
+  font-size: 0.9rem;
+  color: #6c757d;
+  white-space: nowrap;
+  margin-left: auto;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   CREATE BUTTON
+======================================== */
+.ol-btn-create {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  white-space: nowrap;
+  height: 38px;
+}
+
+.ol-btn-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(151, 36, 126, 0.35);
+}
+
+.ol-btn-create i {
+  font-size: 16px;
+}
+
+
+/* ========================================
+   TABLE CARD
+======================================== */
+.ol-table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: visible;
+  position: relative;
+}
+
+.ol-table-wrapper {
+  overflow-x: auto;
+}
+
+.ol-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1rem;
+}
+
+.ol-table thead {
+  background: #27235c;
+}
+
+.ol-table thead tr th:first-child {
+  border-top-left-radius: 11px;
+}
+
+.ol-table thead tr th:last-child {
+  border-top-right-radius: 11px;
+}
+
+.ol-table th {
+  padding: 0.9375rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  background: #27235c;
+}
+
+.ol-table th:last-child {
+  text-align: center;
+}
+
+.ol-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.ol-table tbody tr:hover {
+  background: rgba(39, 35, 92, 0.03);
+}
+
+.ol-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.ol-table td {
+  padding: 1rem;
+  color: #212529;
+  vertical-align: middle;
+  font-size: 1rem;
+  background: #ffffff;
+}
+
+.ol-table td:last-child {
+  text-align: center;
+}
+
+.ol-td-muted {
+  color: #6c757d;
+  font-size: 0.9375rem;
+}
+
+
+/* ========================================
+   OFFER NUMBER LINK
+======================================== */
+.ol-offer-link {
+  font-weight: 700;
+  color: #27235c;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  border-bottom: 1px dashed transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  font-family: monospace;
+  letter-spacing: 0.3px;
+}
+
+.ol-offer-link:hover {
+  color: #97247e;
+  border-bottom-color: #97247e;
+}
+
+
+/* ========================================
+   CANDIDATE INFO (Avatar + Name)
+======================================== */
+.ol-candidate-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ol-candidate-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  flex-shrink: 0;
+}
+
+.ol-candidate-name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9375rem;
+}
+
+
+/* ========================================
+   STATUS BADGES (Pill style — like UserList)
+======================================== */
+.ol-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.875rem;
+  border-radius: 50px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ol-badge-draft {
+  background: rgba(107, 114, 128, 0.1);
+  color: #4b5563;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.ol-badge-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.ol-badge-approved {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.ol-badge-sent {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.ol-badge-accepted {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ol-badge-rejected {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.ol-badge-expired {
+  background: rgba(234, 88, 12, 0.1);
+  color: #c2410c;
+  border: 1px solid rgba(234, 88, 12, 0.3);
+}
+
+.ol-badge-withdrawn {
+  background: rgba(30, 41, 59, 0.08);
+  color: #334155;
+  border: 1px solid rgba(30, 41, 59, 0.2);
+}
+
+.ol-badge-default {
+  background: rgba(107, 114, 128, 0.08);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+
+/* ========================================
+   TYPE BADGES
+======================================== */
+.ol-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ol-type-fulltime {
+  background: rgba(39, 35, 92, 0.08);
+  color: #27235c;
+  border: 1px solid rgba(39, 35, 92, 0.2);
+}
+
+.ol-type-internship {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0e7490;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.ol-type-contract {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.ol-type-parttime {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.ol-type-default {
+  background: rgba(107, 114, 128, 0.08);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+
+/* ========================================
+   VERSION BADGE
+======================================== */
+.ol-version-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+.ol-table-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: nowrap;
+}
+
+.ol-action-view,
+.ol-action-edit,
+.ol-action-preview,
+.ol-action-download,
+.ol-action-disabled {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 0.625rem;
+  border-radius: 6px;
+  border: 1.5px solid;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* View — navy */
+.ol-action-view {
+  color: #27235c;
+  border-color: #27235c;
+  background: rgba(39, 35, 92, 0.06);
+}
+
+.ol-action-view:hover {
+  background: #27235c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(39, 35, 92, 0.25);
+}
+
+/* Edit — blue */
+.ol-action-edit {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.ol-action-edit:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Preview — teal */
+.ol-action-preview {
+  color: #0e7490;
+  border-color: #0e7490;
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.ol-action-preview:hover {
+  background: #0e7490;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(6, 182, 212, 0.3);
+}
+
+/* Download PDF — green */
+.ol-action-download {
+  color: #059669;
+  border-color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+}
+
+.ol-action-download:hover {
+  background: #059669;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(5, 150, 105, 0.3);
+}
+
+/* Disabled state */
+.ol-action-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #6c757d;
+  color: #6c757d;
+  background: rgba(108, 117, 125, 0.06);
+  pointer-events: none;
+}
+
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+.ol-empty-state {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+}
+
+.ol-empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ol-empty-content i {
+  font-size: 3.25rem;
+  color: #6c757d;
+  opacity: 0.5;
+}
+
+.ol-empty-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #27235c;
+  margin: 0;
+}
+
+.ol-empty-content p {
+  color: #6c757d;
+  margin: 0;
+  font-size: 0.9375rem;
+  max-width: 360px;
+}
+
+
+/* ========================================
+   PAGINATION — always rendered
+======================================== */
+.ol-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  overflow: visible;
+}
+
+.ol-pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.ol-rows-dropdown-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.ol-rows-button {
+  padding: 0.3rem 0.625rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: #ffffff;
+  color: #27235c;
+  min-width: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: all 0.2s;
+  height: 30px;
+}
+
+.ol-rows-button:hover {
+  background: #27235c;
+  color: white;
+  border-color: #27235c;
+}
+
+.ol-rows-chevron {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.ol-rows-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 60px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: olDropdownSlide 0.2s ease-out;
+}
+
+@keyframes olDropdownSlide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ol-rows-option {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #212529;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.ol-rows-option:hover {
+  background: #27235c;
+  color: white;
+}
+
+.ol-rows-active {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #27235c;
+}
+
+.ol-rows-active:hover {
+  background: #27235c;
+  color: white;
+}
+
+.ol-pagination-status {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.ol-pagination-nav {
+  margin: 0;
+}
+
+.ol-pagination-list {
+  display: flex;
+  list-style: none;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.ol-page-item {
+  list-style: none;
+}
+
+.ol-page-item button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0.3rem 0.625rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #212529;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ol-page-item button:hover:not(:disabled) {
+  background: rgba(39, 35, 92, 0.05);
+  border-color: #27235c;
+  color: #27235c;
+}
+
+.ol-page-item.active button {
+  background: #27235c;
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(39, 35, 92, 0.3);
+}
+
+.ol-page-item.disabled button {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+.ol-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.ol-loading .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 3px;
+  color: #27235c;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 1200px) {
+  .ol-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .ol-table-wrapper {
+    overflow-x: scroll;
+  }
+
+  .ol-table {
+    min-width: 1100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ol-page {
+    padding: 16px 12px 48px 12px;
+  }
+
+  .ol-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ol-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ol-btn-create {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ol-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ol-search-wrapper {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .ol-status-wrapper {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .ol-status-select {
+    width: 100%;
+  }
+
+  .ol-btn-clear {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ol-results-count {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .ol-pagination {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ol-pagination-info,
+  .ol-pagination-status {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ol-pagination-nav {
+    width: 100%;
+  }
+
+  .ol-pagination-nav .ol-pagination-list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ol-table-actions {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .ol-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .ol-stat-label {
+    font-size: 0.75rem;
+  }
+
+  .ol-table {
+    min-width: 980px;
+  }
+
+  .ol-table th,
+  .ol-table td {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+    

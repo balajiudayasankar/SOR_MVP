@@ -1,0 +1,319 @@
+/* ==================== BACKDROP ==================== */
+.acm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+/* Fix 2 — Container must not stretch beyond content */
+.acm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97%;
+  max-width: 720px;
+  z-index: 1050;
+  height: auto;               /* ← add this */
+}
+
+/* ==================== MODAL DIALOG ==================== */
+/* Fix 1 — Dialog wraps to content height only */
+.acm-modal-dialog {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;        /* ← add this */
+  max-height: 90vh;           /* ← add this */
+}
+
+
+
+
+/* ==================== HEADER ==================== */
+.acm-modal-header {
+  background: #27235c;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.acm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.acm-close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.acm-close-btn:hover:not(:disabled) {
+  opacity: 0.75;
+}
+
+.acm-close-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==================== BODY ==================== */
+.acm-modal-body {
+  padding: 14px 15px 6px 15px;
+  background: #fff;
+  text-align: left;
+  overflow: visible;
+}
+
+/* ==================== FORM GRID ==================== */
+.acm-form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+/* ==================== FORM GROUPS ==================== */
+.acm-form-group {
+  flex: 1;
+  min-width: 47%;
+}
+
+/* Full-width group (Address) */
+.acm-form-group--full {
+  flex: 1 1 100%;
+  min-width: 100%;
+}
+
+.acm-form-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.acm-required {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ==================== FORM INPUTS ==================== */
+.acm-form-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 9px;
+  font-size: 13px;
+  background: #fff;
+  color: #334155;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.acm-form-input::placeholder {
+  color: #9ca3af;
+}
+
+.acm-form-input:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.acm-form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.acm-form-input.error {
+  border: 1px solid #dc3545;
+}
+
+.acm-form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Textarea specific */
+.acm-textarea {
+  resize: vertical;
+  min-height: 64px;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+/* ==================== FORM FEEDBACK ==================== */
+.acm-form-error {
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.acm-form-hint {
+  color: #64748b;
+  font-size: 11px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.acm-form-hint i,
+.acm-form-error i {
+  font-size: 11px;
+}
+
+/* ==================== INFO ALERT ==================== */
+.acm-info-alert {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 5px 8px;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.acm-info-alert i {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ==================== FOOTER ==================== */
+.acm-modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* ==================== BUTTONS ==================== */
+.acm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.acm-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.acm-btn-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.acm-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 14px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.acm-btn-submit:hover:not(:disabled) {
+  opacity: 0.93;
+  box-shadow: 0 4px 12px rgba(151, 36, 126, 0.35);
+}
+
+.acm-btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* ==================== SPINNER ==================== */
+.acm-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  animation: acm-spin 0.7s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes acm-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .acm-modal-container {
+    width: 95%;
+  }
+
+  .acm-form-grid {
+    flex-direction: column;
+  }
+
+  .acm-form-group,
+  .acm-form-group--full {
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .acm-modal-header { padding: 11px 12px; font-size: 14px; }
+  .acm-modal-body   { padding: 12px 12px 6px 12px; }
+  .acm-modal-footer { padding: 8px 12px; }
+  .acm-btn-cancel,
+  .acm-btn-submit   { flex: 1; justify-content: center; }
+}

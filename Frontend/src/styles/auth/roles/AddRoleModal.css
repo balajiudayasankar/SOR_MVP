@@ -1,0 +1,250 @@
+/* ==================== BACKDROP ==================== */
+.arm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.arm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 590px;
+  z-index: 1050;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.arm-modal-dialog {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.arm-modal-header {
+  background: #27235c;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.arm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.arm-close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arm-close-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==================== BODY ==================== */
+.arm-modal-body {
+  padding: 16px 15px 6px 15px;
+  background: #fff;
+}
+
+.arm-form {
+  margin: 0;
+}
+
+/* ==================== FORM CONTENT ==================== */
+.arm-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+/* ==================== FORM GROUPS ==================== */
+.arm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.arm-form-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #334155;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arm-required-asterisk {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ==================== FORM INPUTS ==================== */
+.arm-form-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: #fff;
+  color: #22223b;
+}
+
+.arm-form-input:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.arm-form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.arm-form-input.error {
+  border: 1px solid #dc3545;
+}
+
+.arm-form-textarea {
+  resize: vertical;
+  min-height: 60px;
+  max-height: 120px;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.arm-form-error {
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.arm-char-count {
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* ==================== INFO ALERT ==================== */
+.arm-info-alert {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 5px 8px;
+  gap: 5px;
+}
+
+/* ==================== FOOTER ==================== */
+.arm-modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* ==================== BUTTONS ==================== */
+.arm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.arm-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.arm-btn-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.arm-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arm-btn-submit:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.arm-btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* ==================== SPINNER ==================== */
+.arm-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-top: 2px solid #e01950;
+  border-radius: 50%;
+  animation: arm-spin 0.7s linear infinite;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+@keyframes arm-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

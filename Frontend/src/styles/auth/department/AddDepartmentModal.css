@@ -1,0 +1,446 @@
+/* ==================== BACKDROP ==================== */
+.adm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+/* ==================== MODAL CONTAINER ==================== */
+.adm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1050;
+}
+
+/* ==================== MODAL DIALOG ==================== */
+.adm-modal-dialog {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== HEADER ==================== */
+.adm-modal-header {
+  background: #27235c;
+  color: #fff;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.adm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adm-close-button {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* ==================== BODY ==================== */
+.adm-modal-body {
+  padding: 20px 18px;
+  background: #fff;
+  overflow: visible;
+}
+
+.adm-form {
+  margin: 0;
+}
+
+/* ==================== LOADING STATE ==================== */
+.adm-loading-container {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.adm-loading-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ==================== FORM LAYOUT ==================== */
+.adm-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.adm-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.adm-form-row-full {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ==================== FORM GROUPS ==================== */
+.adm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.adm-form-group:focus-within {
+  z-index: 9998;
+}
+
+.adm-form-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.adm-required-asterisk {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ==================== FORM INPUTS ==================== */
+.adm-form-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 13px;
+  background: #fff;
+  color: #334155;
+  min-height: 42px;
+}
+
+.adm-form-input::placeholder {
+  color: #9ca3af;
+}
+
+.adm-form-input:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.adm-form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.adm-form-input.adm-input-error {
+  border: 1px solid #dc3545;
+}
+
+.adm-form-input-uppercase {
+  text-transform: uppercase;
+}
+
+.adm-form-textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.adm-form-error {
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* ============================================
+   CUSTOM DROPDOWN - NATIONALITY STYLE
+   ============================================ */
+
+.adm-custom-dropdown {
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  background: #ffffff;
+  color: #212529;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  z-index: 1;
+}
+
+.adm-custom-dropdown:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.adm-custom-dropdown:hover {
+  border-color: #27235c;
+}
+
+.adm-custom-dropdown.adm-error {
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.02);
+}
+
+.adm-custom-dropdown.adm-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.adm-custom-dropdown.adm-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.adm-custom-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding-right: 1.5rem;
+}
+
+.adm-custom-selected span:first-child {
+  flex: 1;
+  text-align: left;
+}
+
+.adm-placeholder-text {
+  color: #adb5bd;
+  opacity: 0.8;
+}
+
+/* Arrow positioned close to edge */
+.adm-custom-arrow {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #6c757d;
+  border-bottom: 2px solid #6c757d;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+/* Arrow rotation when open */
+.adm-custom-dropdown:focus-within .adm-custom-arrow {
+  transform: translateY(-50%) rotate(225deg);
+}
+
+/* Dropdown menu */
+.adm-custom-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow-y: auto;
+  animation: admDropdownFadeIn 0.15s ease-out;
+  min-width: 100%;
+}
+
+/* OPEN UPWARD */
+.adm-custom-menu.adm-menu-upward {
+  top: auto;
+  bottom: calc(100% + 4px);
+  animation: admDropdownFadeInUpward 0.15s ease-out;
+}
+
+@keyframes admDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes admDropdownFadeInUpward {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.adm-custom-option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  transition: all 0.12s ease;
+  font-size: 0.9375rem;
+  color: #111827;
+}
+
+.adm-custom-option:hover {
+  background-color: #27235c;
+  color: #ffffff;
+}
+
+.adm-custom-option:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.adm-custom-option:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.adm-custom-option-active {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.adm-custom-option-active:hover {
+  background-color: #27235c;
+  color: #ffffff;
+}
+
+/* Scrollbar styling - EXACT MATCH TO NATIONALITY DROPDOWN */
+.adm-custom-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.adm-custom-menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.adm-custom-menu::-webkit-scrollbar-thumb {
+  background: #27235c;
+  border-radius: 10px;
+}
+
+.adm-custom-menu::-webkit-scrollbar-thumb:hover {
+  background: #1f1c4b;
+}
+
+/* Firefox scrollbar */
+.adm-custom-menu {
+  scrollbar-width: thin;
+  scrollbar-color: #27235c #f1f1f1;
+}
+
+/* ==================== INFO MESSAGE ==================== */
+.adm-info-message {
+  font-size: 11px;
+  color: #f59e0b;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==================== FOOTER ==================== */
+.adm-modal-footer {
+  padding: 14px 18px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ==================== BUTTONS ==================== */
+.adm-btn-cancel {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 16px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.adm-btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.adm-btn-cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.adm-btn-submit {
+  background: linear-gradient(90deg, #97247e 0%, #e01950 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 16px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(151, 36, 126, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.adm-btn-submit:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.adm-btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .adm-modal-container {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .adm-form-row {
+    grid-template-columns: 1fr;
+  }
+}

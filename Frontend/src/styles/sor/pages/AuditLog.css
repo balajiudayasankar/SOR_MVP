@@ -1,0 +1,319 @@
+/* ============================================================
+   Audit Log — Scoped Styles  (Prefix: al-)
+   Theme: #27235c navy | gradient #97247e → #e01950
+============================================================ */
+
+/* ── Page ────────────────────────────────────────────────────── */
+.al-page {
+  padding: 16px 20px 48px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* ── Page Header ─────────────────────────────────────────────── */
+.al-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.875rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.al-page-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  text-align:left;
+}
+
+.al-page-subtitle {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.al-page-subtitle__count {
+  font-weight: 600;
+  color: #27235c;
+}
+
+/* ── Refresh Button ──────────────────────────────────────────── */
+.al-btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1.125rem;
+  background: #ffffff;
+  border: 1.5px solid #27235c;
+  border-radius: 8px;
+  color: #27235c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  height: 38px;
+}
+
+.al-btn-refresh i { font-size: 15px; }
+
+.al-btn-refresh:hover {
+  background: #27235c;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(39, 35, 92, 0.22);
+}
+
+.al-btn-refresh:hover i {
+  animation: al-spin-once 0.4s linear;
+}
+
+@keyframes al-spin-once {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Table Card ──────────────────────────────────────────────── */
+.al-table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: visible;
+  position: relative;
+}
+
+/* Card header bar */
+.al-table-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  background: #27235c;
+  border-radius: 11px 11px 0 0;
+}
+
+.al-table-card__header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.al-table-card__header-left i {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.al-record-pill {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.3px;
+}
+
+/* Inline loading spinner in header */
+.al-inline-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: al-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes al-spin { to { transform: rotate(360deg); } }
+
+/* Table body wrapper — allows AuditTable's own scroll */
+.al-table-body {
+  overflow-x: auto;
+}
+
+/* ── Pagination ──────────────────────────────────────────────── */
+.al-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Rows per page */
+.al-pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.al-rows-dropdown-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.al-rows-button {
+  padding: 0.3rem 0.625rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: #ffffff;
+  color: #27235c;
+  min-width: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: all 0.2s;
+  height: 30px;
+}
+
+.al-rows-button:hover {
+  background: #27235c;
+  color: #ffffff;
+  border-color: #27235c;
+}
+
+.al-rows-chevron {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.al-rows-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 65px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: alDropSlide 0.2s ease-out;
+}
+
+@keyframes alDropSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.al-rows-option {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #212529;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.al-rows-option:hover { background: #27235c; color: #ffffff; }
+.al-rows-active       { background: #f3f4f6; font-weight: 600; color: #27235c; }
+.al-rows-active:hover { background: #27235c; color: #ffffff; }
+
+/* Entry count */
+.al-pagination-status {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Page number buttons */
+.al-pagination-nav { margin: 0; }
+
+.al-pagination-list {
+  display: flex;
+  list-style: none;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.al-page-item { list-style: none; }
+
+.al-page-item button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0.3rem 0.625rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #212529;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.al-page-item button:hover:not(:disabled) {
+  background: rgba(39, 35, 92, 0.05);
+  border-color: #27235c;
+  color: #27235c;
+}
+
+.al-page-item.active button {
+  background: #27235c;
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(39, 35, 92, 0.3);
+}
+
+.al-page-item.disabled button {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .al-page { padding: 12px 12px 48px 12px; }
+
+  .al-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .al-btn-refresh { width: 100%; justify-content: center; }
+
+  .al-pagination {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .al-pagination-info,
+  .al-pagination-status {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .al-pagination-nav { width: 100%; }
+
+  .al-pagination-list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .al-page-title { font-size: 1.1rem; }
+}

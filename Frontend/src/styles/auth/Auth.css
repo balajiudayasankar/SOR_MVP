@@ -1,0 +1,945 @@
+/* ============================================================
+   AUTH.CSS — Streamlined Offer Release System
+   Color theme: EEPZ palette
+     Primary dark  : #1a2240
+     Secondary dark: #2d3565
+     Accent blue   : #5a9fd4
+     Accent hover  : #4a8fc7
+     Accent active : #3a7fb7
+   Bootstrap-proof via !important on all structural values.
+   ============================================================ */
+
+/* ── Reset ancestors ── */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+}
+
+/* ======================================================
+   SPINNER KEYFRAME
+   ====================================================== */
+@keyframes sor-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sor-gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes sor-badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+@keyframes sor-fade-in {
+  from { opacity: 0; transform: translateY(-50%) scale(0.8); }
+  to   { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+@keyframes sor-slide-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================================================
+   PAGE WRAPPER
+   ====================================================== */
+.sor-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* EEPZ: light gradient background */
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ── Decorative blobs ── */
+.sor-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sor-blob--tl {
+  width: 420px;
+  height: 420px;
+  top: -160px;
+  left: -160px;
+  /* EEPZ: blue accent blob */
+  background: #5a9fd4;
+  opacity: 0.08;
+}
+
+.sor-blob--br {
+  width: 380px;
+  height: 380px;
+  bottom: -130px;
+  right: -130px;
+  /* EEPZ: dark navy blob */
+  background: #1a2240;
+  opacity: 0.12;
+}
+
+/* ======================================================
+   MAIN CARD
+   ====================================================== */
+.sor-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  min-height: 560px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(26, 34, 64, 0.18);
+}
+
+/* ── LEFT panel ── */
+.sor-left {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  box-sizing: border-box;
+}
+
+.sor-left-inner {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── RIGHT panel ── */
+.sor-right {
+  flex: 0 0 380px;
+  /* EEPZ: navy gradient right panel */
+  background: linear-gradient(135deg, #2d3565 0%, #1a2240 100%);
+  background-size: 200% 200%;
+  animation: sor-gradient-shift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================================================
+   LOGO
+   ====================================================== */
+.sor-logo-wrap {
+  margin-bottom: 20px;
+}
+
+.sor-logo-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  /* EEPZ: navy background, blue accent icon */
+  background: linear-gradient(135deg, #2d3565 0%, #1a2240 100%);
+  color: #5a9fd4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 6px 20px rgba(26, 34, 64, 0.25);
+}
+
+/* ── Welcome label ── */
+.sor-welcome-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  /* EEPZ: blue-tinted muted */
+  color: #5a9fd4 !important;
+  margin: 0 0 4px 0 !important;
+  text-align: center !important;
+}
+
+/* ── Heading ── */
+.sor-heading {
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
+  /* EEPZ: dark navy */
+  color: #1a2240 !important;
+  margin: 0 0 8px 0 !important;
+  text-align: center !important;
+  line-height: 1.3 !important;
+}
+
+/* ── Subtext ── */
+.sor-subtext {
+  font-size: 0.84rem !important;
+  color: #6b7280 !important;
+  text-align: center !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* ── Global error ── */
+.sor-global-error {
+  width: 100%;
+  background: rgba(220, 38, 38, 0.09);
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  animation: sor-slide-down 0.3s ease-out;
+}
+
+/* ── Field wrapper ── */
+.sor-field {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+/* ── Pill input wrapper ── */
+.sor-input-pill {
+  display: flex !important;
+  align-items: center !important;
+  border: 1.5px solid #d1d5db !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  overflow: hidden !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  height: 46px !important;
+}
+
+.sor-input-pill:focus-within {
+  /* EEPZ: blue focus ring */
+  border-color: #2d3565 !important;
+  box-shadow: 0 0 0 3px rgba(90, 159, 212, 0.2) !important;
+}
+
+.sor-input-pill.invalid {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.sor-input-pill.valid {
+  /* EEPZ: keep green for valid state */
+  border-color: #198754 !important;
+}
+
+/* Pill icon */
+.sor-pill-icon {
+  flex-shrink: 0 !important;
+  padding: 0 10px 0 16px !important;
+  /* EEPZ: blue-tinted icon */
+  color: #5a9fd4 !important;
+  font-size: 1rem !important;
+  pointer-events: none !important;
+}
+
+/* Pill valid check */
+.sor-pill-check {
+  flex-shrink: 0;
+  padding: 0 14px 0 0;
+  color: #198754;
+  font-size: 0.9rem;
+  animation: sor-fade-in 0.2s ease-out;
+}
+
+/* Actual input */
+.sor-input {
+  flex: 1 !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  height: 100% !important;
+  font-size: 0.875rem !important;
+  color: #111827 !important;
+  padding: 0 12px 0 0 !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+}
+
+.sor-input::placeholder {
+  color: #9ca3af !important;
+}
+
+.sor-input:disabled {
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
+}
+
+/* Eye toggle */
+.sor-eye-btn {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  padding: 0 14px !important;
+  color: #9ca3af !important;
+  font-size: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  transition: color 0.15s ease !important;
+  box-shadow: none !important;
+}
+
+.sor-eye-btn:hover {
+  /* EEPZ: blue accent on hover */
+  color: #5a9fd4 !important;
+}
+
+/* Error message */
+.sor-err-msg {
+  font-size: 0.75rem !important;
+  color: #dc2626 !important;
+  margin: 5px 14px 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* ── Forgot row ── */
+.sor-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 18px;
+  margin-top: -6px;
+}
+
+.sor-forgot {
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  /* EEPZ: dark navy link */
+  color: #2d3565 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.sor-forgot:hover {
+  /* EEPZ: blue accent on hover */
+  color: #4a8fc7 !important;
+  text-decoration: underline !important;
+}
+
+/* ── Submit button ── */
+.sor-btn-submit {
+  width: 100% !important;
+  height: 46px !important;
+  /* EEPZ: blue accent button */
+  background: linear-gradient(135deg, #2d3565 0%, #1a2240 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 16px rgba(45, 53, 101, 0.3) !important;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
+  font-family: inherit !important;
+}
+
+.sor-btn-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3d4785 0%, #2a3260 100%) !important;
+  box-shadow: 0 8px 20px rgba(90, 159, 212, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.sor-btn-submit:active:not(:disabled) {
+  background: linear-gradient(135deg, #1a2240 0%, #131830 100%) !important;
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 12px rgba(45, 53, 101, 0.25) !important;
+}
+
+.sor-btn-submit:disabled {
+  background: #e5e7eb !important;
+  color: #9ca3af !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Submit spinner */
+.sor-btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: sor-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Secure note ── */
+.sor-secure-note {
+  margin-top: 20px !important;
+  font-size: 0.75rem !important;
+  color: #9ca3af !important;
+  display: flex !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 4px !important;
+}
+
+/* ======================================================
+   RIGHT PANEL ELEMENTS
+   ====================================================== */
+
+/* Dot mesh */
+.sor-right-mesh {
+  position: absolute;
+  inset: 0;
+  /* EEPZ: blue tint dots */
+  background-image: radial-gradient(circle, rgba(90, 159, 212, 0.12) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Pseudo-element circles (same as EEPZ) */
+.sor-right::before,
+.sor-right::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.sor-right::before {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  left: -200px;
+}
+
+.sor-right::after {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+}
+
+/* Glow bubble */
+.sor-right-glow {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  /* EEPZ: subtle blue glow */
+  background: rgba(90, 159, 212, 0.08);
+  bottom: -100px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Right content */
+.sor-right-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  padding: 40px 36px;
+}
+
+/* Badge */
+.sor-badge {
+  display: inline-flex;
+  align-items: center;
+  /* EEPZ: white translucent badge */
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 16px;
+  animation: sor-badge-pulse 3s ease-in-out infinite;
+}
+
+/* Icon ring */
+.sor-icon-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* EEPZ: blue accent ring */
+  border: 2.5px solid rgba(90, 159, 212, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a9fd4;
+  background: rgba(90, 159, 212, 0.1);
+  box-shadow: 0 0 30px rgba(90, 159, 212, 0.2);
+}
+
+/* Right title */
+.sor-right-title {
+  font-size: 2.1rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Accent span in title */
+.sor-right-title-accent {
+  /* EEPZ: blue accent on title word */
+  color: #5a9fd4;
+}
+
+/* Right description */
+.sor-right-desc {
+  font-size: 0.9rem !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.65 !important;
+  max-width: 300px !important;
+  margin: 0 !important;
+}
+
+/* Feature list */
+.sor-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.sor-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.sor-feature-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  /* EEPZ: blue accent icon circles */
+  background: rgba(90, 159, 212, 0.2);
+  color: #5a9fd4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ======================================================
+   FOCUS STATES
+   ====================================================== */
+.sor-btn-submit:focus-visible,
+.sor-eye-btn:focus-visible,
+.sor-forgot:focus-visible {
+  /* EEPZ: blue focus ring */
+  outline: 2px solid #5a9fd4;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ======================================================
+   OTHER AUTH PAGES (verify, reset, change-password)
+   ====================================================== */
+.auth-page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.verify-container,
+.reset-container,
+.change-password-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  padding: 2rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Code inputs (OTP) */
+.code-inputs-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.code-inputs {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 0;
+}
+
+.code-input {
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #dee2e6 !important;
+  border-radius: 0.5rem !important;
+}
+
+.code-input:focus {
+  /* EEPZ: blue focus */
+  border-color: #5a9fd4 !important;
+  box-shadow: 0 0 0 0.25rem rgba(90, 159, 212, 0.25) !important;
+  outline: 0;
+}
+
+/* OTP visibility toggle */
+.otp-toggle-btn {
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 22px;
+  transition: all 0.2s ease;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.otp-toggle-btn:hover:not(:disabled) {
+  color: #5a9fd4;
+  background: rgba(90, 159, 212, 0.1);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.otp-toggle-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Reset icon */
+.reset-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* EEPZ: blue gradient */
+  background: linear-gradient(135deg, #5a9fd4 0%, #4a8fc7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(90, 159, 212, 0.35);
+  animation: sor-icon-pulse 2s ease-in-out infinite;
+}
+
+.reset-icon-circle i {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+@keyframes sor-icon-pulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 8px 24px rgba(90, 159, 212, 0.3); }
+  50%       { transform: scale(1.05); box-shadow: 0 12px 32px rgba(90, 159, 212, 0.45); }
+}
+
+/* Password requirements card */
+.password-requirements-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  animation: sor-slide-down 0.3s ease-out;
+}
+
+.requirements-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #495057;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.requirements-title i {
+  /* EEPZ: blue accent icon */
+  color: #5a9fd4;
+  font-size: 1.125rem;
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirements-list li {
+  padding: 0.625rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.requirement-pending { color: #6c757d; }
+.requirement-pending i { color: #adb5bd; }
+.requirement-met { color: #198754; font-weight: 500; }
+.requirement-met i { color: #198754; }
+
+.requirements-success {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #d1e7dd 0%, #badbcc 100%);
+  border: 2px solid #198754;
+  border-radius: 8px;
+  color: #0f5132;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Strength bar */
+.strength-bar-container {
+  width: 100%;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.strength-bar {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Reset info box */
+.reset-info-box {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 2px solid #90caf9;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  animation: sor-slide-down 0.4s ease-out;
+}
+
+/* Input states */
+.form-control.is-valid {
+  border-color: #198754;
+  padding-right: 45px;
+}
+
+.form-control.is-valid:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  padding-right: 45px;
+}
+
+.form-control.is-invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #5a9fd4;
+  border-color: #5a9fd4;
+}
+
+.form-check-input:focus {
+  border-color: #5a9fd4;
+  box-shadow: 0 0 0 0.25rem rgba(90, 159, 212, 0.25);
+}
+
+/* Password toggle (non-pill pages) */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input { padding-right: 50px !important; }
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #6c757d;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:hover {
+  color: #5a9fd4;
+  background: rgba(90, 159, 212, 0.1);
+}
+
+.auth-invalid-input {
+  color: #dc3545;
+  font-size: 0.82rem;
+  text-align: left;
+}
+
+/* Button overrides */
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(90, 159, 212, 0.4);
+}
+
+.btn-primary:active:not(:disabled) { transform: translateY(0); }
+.btn-link:hover { text-decoration: underline !important; color: #4a8fc7 !important; }
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+@media (max-width: 900px) {
+  .sor-card {
+    flex-direction: column;
+    max-width: 480px;
+    min-height: unset;
+  }
+
+  .sor-left {
+    padding: 36px 32px;
+  }
+
+  .sor-right {
+    flex: none;
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .sor-right-title {
+    font-size: 1.6rem !important;
+  }
+
+  .sor-feature-list {
+    display: none;
+  }
+
+  .sor-blob {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sor-page { padding: 16px; }
+
+  .code-inputs { gap: 0.5rem; }
+
+  .code-input {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+  }
+
+  .otp-toggle-btn {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 12px;
+    background: rgba(90, 159, 212, 0.08);
+    border-radius: 8px;
+    font-size: 20px;
+  }
+
+  .otp-toggle-btn:hover:not(:disabled) {
+    transform: scale(1.02);
+  }
+
+  .code-inputs-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .sor-heading { font-size: 1.1rem !important; }
+  .sor-left { padding: 28px 20px; }
+
+  .reset-icon-circle {
+    width: 64px;
+    height: 64px;
+  }
+
+  .reset-icon-circle i { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .code-input {
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+  }
+}
+
+/* Hide browser password reveal */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}

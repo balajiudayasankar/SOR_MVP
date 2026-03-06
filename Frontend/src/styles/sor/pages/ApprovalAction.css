@@ -1,0 +1,703 @@
+/* ApprovalAction - Scoped Styles (Prefix: aab-) */
+
+.aab-page {
+  padding: 16px 20px 48px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+.aab-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.aab-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.aab-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #27235c;
+  border: 1.5px solid #27235c;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.aab-btn-back:hover {
+  background: #27235c;
+  color: #ffffff;
+}
+
+.aab-header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aab-page-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+.aab-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.aab-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.aab-btn-expedite,
+.aab-btn-preview,
+.aab-btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  height: 38px;
+  background: transparent;
+}
+
+.aab-btn-expedite {
+  color: #b45309;
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.aab-btn-expedite:hover {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(245, 158, 11, 0.3);
+}
+
+.aab-btn-preview {
+  color: #0e7490;
+  border-color: #0e7490;
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.aab-btn-preview:hover {
+  background: #0e7490;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(6, 182, 212, 0.3);
+}
+
+.aab-btn-download {
+  color: #059669;
+  border-color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+}
+
+.aab-btn-download:hover {
+  background: #059669;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(5, 150, 105, 0.3);
+}
+
+
+/* ========================================
+   STATUS & TYPE BADGES
+======================================== */
+.aab-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.875rem;
+  border-radius: 50px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aab-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aab-badge-draft {
+  background: rgba(107, 114, 128, 0.1);
+  color: #4b5563;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.aab-badge-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.aab-badge-approved {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.aab-badge-sent {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.aab-badge-accepted {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.aab-badge-rejected {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.aab-badge-expired {
+  background: rgba(234, 88, 12, 0.1);
+  color: #c2410c;
+  border: 1px solid rgba(234, 88, 12, 0.3);
+}
+
+.aab-badge-withdrawn {
+  background: rgba(30, 41, 59, 0.08);
+  color: #334155;
+  border: 1px solid rgba(30, 41, 59, 0.2);
+}
+
+.aab-badge-default {
+  background: rgba(107, 114, 128, 0.08);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+.aab-type-fulltime {
+  background: rgba(39, 35, 92, 0.08);
+  color: #27235c;
+  border: 1px solid rgba(39, 35, 92, 0.2);
+}
+
+.aab-type-internship {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0e7490;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.aab-type-contract {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.aab-type-parttime {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.aab-type-default {
+  background: rgba(107, 114, 128, 0.08);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+
+/* ========================================
+   ACTION BANNER
+======================================== */
+.aab-action-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.125rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #fbbf24;
+  border-left: 5px solid #f59e0b;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.12);
+  flex-wrap: wrap;
+}
+
+.aab-action-banner__left {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.aab-action-banner__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.aab-action-banner__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.aab-action-banner__desc {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+.aab-action-banner__btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
+/* ========================================
+   ACTION BANNER BUTTONS
+======================================== */
+.aab-btn-approve,
+.aab-btn-revision,
+.aab-btn-reject,
+.aab-btn-finance {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1.125rem;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  height: 38px;
+  border: 1.5px solid transparent;
+}
+
+.aab-btn-approve {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+}
+
+.aab-btn-approve:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(16, 185, 129, 0.4);
+}
+
+.aab-btn-revision {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border-color: #f59e0b;
+}
+
+.aab-btn-revision:hover {
+  background: #f59e0b;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(245, 158, 11, 0.35);
+}
+
+.aab-btn-reject {
+  background: rgba(239, 68, 68, 0.08);
+  color: #b91c1c;
+  border-color: #dc3545;
+}
+
+.aab-btn-reject:hover {
+  background: #dc3545;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(220, 53, 69, 0.35);
+}
+
+.aab-btn-finance {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+
+.aab-btn-finance:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(59, 130, 246, 0.4);
+}
+
+
+/* ========================================
+   INFO BANNER
+======================================== */
+.aab-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9375rem 1.25rem;
+  background: rgba(59, 130, 246, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-left: 4px solid #3b82f6;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.aab-info-banner__icon {
+  font-size: 1.125rem;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   DETAIL CARDS
+======================================== */
+.aab-detail-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.aab-detail-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9375rem 1.25rem;
+  background: #27235c;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.aab-detail-card__header i {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.aab-detail-card__body {
+  padding: 1rem 1.25rem;
+}
+
+
+/* ========================================
+   DETAIL ROWS
+======================================== */
+.aab-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0.625rem 0.75rem;
+  background: #f8f9fc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  transition: background 0.15s ease;
+  height: 100%;
+}
+
+.aab-detail-row:hover {
+  background: #f1f5f9;
+}
+
+.aab-detail-row__label {
+  font-size: 0.7375rem;
+  color: #9ca3af;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aab-detail-row__value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+
+/* ========================================
+   WORKFLOW CARD (sticky right panel)
+======================================== */
+.aab-workflow-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  position: sticky;
+  top: 1rem;
+}
+
+.aab-workflow-card__body {
+  padding: 1rem 1.25rem;
+}
+
+.aab-workflow-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.aab-workflow-number {
+  font-family: monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6c757d;
+  letter-spacing: 0.3px;
+}
+
+.aab-wf-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aab-wf-completed {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.aab-wf-inprogress {
+  background: rgba(245, 158, 11, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.aab-wf-default {
+  background: rgba(107, 114, 128, 0.1);
+  color: #4b5563;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+
+/* ========================================
+   WORKFLOW PROGRESS BAR
+======================================== */
+.aab-workflow-progress {
+  margin-bottom: 1.125rem;
+}
+
+.aab-workflow-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.375rem;
+}
+
+.aab-workflow-progress__label {
+  font-size: 0.8125rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.aab-workflow-progress__count {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #27235c;
+}
+
+.aab-progress-track {
+  height: 7px;
+  background: #e5e7eb;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.aab-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #27235c 0%, #97247e 100%);
+  border-radius: 50px;
+  transition: width 0.5s ease;
+  min-width: 8px;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+.aab-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.aab-loading .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 3px;
+  color: #27235c;
+}
+
+
+/* ========================================
+   ERROR STATE
+======================================== */
+.aab-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin-top: 1rem;
+}
+
+.aab-error-state i {
+  font-size: 3.5rem;
+  color: #dc3545;
+  opacity: 0.7;
+}
+
+.aab-error-state h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.aab-error-state p {
+  font-size: 0.9375rem;
+  color: #6c757d;
+  margin: 0;
+  max-width: 340px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 992px) {
+  .aab-workflow-card {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .aab-page {
+    padding: 16px 12px 48px 12px;
+  }
+
+  .aab-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aab-header-left {
+    flex-wrap: wrap;
+  }
+
+  .aab-header-actions {
+    width: 100%;
+  }
+
+  .aab-btn-expedite,
+  .aab-btn-preview,
+  .aab-btn-download {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .aab-action-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aab-action-banner__btns {
+    width: 100%;
+  }
+
+  .aab-btn-approve,
+  .aab-btn-revision,
+  .aab-btn-reject,
+  .aab-btn-finance {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .aab-page-title {
+    font-size: 1rem;
+  }
+
+  .aab-detail-card__body {
+    padding: 0.75rem;
+  }
+
+  .aab-workflow-card__body {
+    padding: 0.75rem;
+  }
+}

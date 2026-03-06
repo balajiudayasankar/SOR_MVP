@@ -1,0 +1,7 @@
+.audit-table-wrapper { border-radius: 10px; overflow: hidden; }
+.audit-empty {
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+}

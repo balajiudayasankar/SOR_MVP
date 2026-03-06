@@ -1,0 +1,449 @@
+/* ========================================
+   ApproveModal — Scoped Prefix: apm-
+======================================== */
+
+
+/* ========================================
+   BACKDROP
+======================================== */
+.apm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(39, 35, 92, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1040;
+}
+
+
+/* ========================================
+   MODAL CONTAINER
+======================================== */
+.apm-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97%;
+  max-width: 520px;
+  max-height: 90vh;
+  height: auto;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========================================
+   MODAL DIALOG
+======================================== */
+.apm-modal-dialog {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+
+/* ========================================
+   FORM — fixes flex scroll chain
+   (same pattern as acm-form)
+======================================== */
+.apm-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+.apm-modal-header {
+  background: #27235c;
+  color: #ffffff;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.apm-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.apm-header-title i {
+  font-size: 16px;
+  color: #4ade80;  /* green icon to signal approval */
+}
+
+.apm-close-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: background 0.15s ease;
+}
+
+.apm-close-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.15); }
+.apm-close-btn:disabled             { opacity: 0.6; cursor: not-allowed; }
+
+
+/* ========================================
+   BODY
+======================================== */
+.apm-modal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.apm-modal-body::-webkit-scrollbar       { width: 5px; }
+.apm-modal-body::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 6px; }
+.apm-modal-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+.apm-modal-body::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+
+/* ========================================
+   STEP INFO CARD
+======================================== */
+.apm-step-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8f9fc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.apm-step-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #27235c 0%, #4338ca 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.apm-step-icon-wrap i {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.apm-step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.apm-step-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.apm-step-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.apm-step-role {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #27235c;
+}
+
+.apm-step-role i { font-size: 16px; color: #cbd5e1; }
+
+.apm-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: rgba(5, 150, 105, 0.08);
+  color: #047857;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.apm-step-badge i { font-size: 11px; }
+
+
+/* ========================================
+   FORM GROUP & TEXTAREA
+======================================== */
+.apm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.apm-form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.apm-optional {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  background: #f1f5f9;
+  color: #94a3b8;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.apm-textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #334155;
+  background: #ffffff;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.55;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apm-textarea::placeholder { color: #9ca3af; }
+
+.apm-textarea:focus {
+  outline: none;
+  border-color: #27235c;
+  box-shadow: 0 0 0 3px rgba(39, 35, 92, 0.1);
+}
+
+.apm-textarea:disabled {
+  background: #f8fafc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.apm-textarea--error             { border-color: #dc3545; }
+.apm-textarea--error:focus       { box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1); }
+
+
+/* ── Textarea footer (hint + counter) ───────────────────────── */
+.apm-textarea-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.apm-form-error {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #dc3545;
+  font-size: 11px;
+}
+
+.apm-form-error i { font-size: 11px; flex-shrink: 0; }
+
+.apm-form-hint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.apm-form-hint i { font-size: 11px; flex-shrink: 0; }
+
+.apm-char-count {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.apm-char-count--near  { color: #d97706; }
+.apm-char-count--limit { color: #dc3545; font-weight: 700; }
+
+
+/* ========================================
+   ALERTS (info / error)
+======================================== */
+.apm-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 10px 12px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+.apm-alert i { flex-shrink: 0; margin-top: 1px; }
+
+.apm-alert--info {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-left: 3px solid #16a34a;
+}
+
+.apm-alert--info i    { color: #16a34a; font-size: 13px; }
+
+.apm-alert--error {
+  background: #fff5f5;
+  color: #dc3545;
+  border: 1px solid #fecaca;
+  border-left: 3px solid #dc3545;
+}
+
+.apm-alert--error i   { color: #dc3545; font-size: 13px; }
+
+
+/* ========================================
+   FOOTER
+======================================== */
+.apm-modal-footer {
+  padding: 10px 16px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.apm-btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: #6c757d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.apm-btn-cancel:hover:not(:disabled) { background: #5a6268; }
+.apm-btn-cancel:disabled             { cursor: not-allowed; opacity: 0.7; }
+
+/* Approve button — green gradient */
+.apm-btn-approve {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 20px;
+  background: linear-gradient(90deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.apm-btn-approve:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+}
+
+.apm-btn-approve:disabled { cursor: not-allowed; opacity: 0.75; }
+
+
+/* ========================================
+   SPINNER
+======================================== */
+.apm-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: apmSpin 0.7s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes apmSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 576px) {
+  .apm-modal-container { width: 96%; }
+
+  .apm-step-card {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .apm-step-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
